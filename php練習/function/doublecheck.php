@@ -20,7 +20,6 @@ class Check_Various{
         $session_token = isset($_SESSION['token']) ? $_SESSION['token'] : '';
         // POSTの値からトークンを取得
         $token = isset($_POST['token']) ? $_POST['token'] : '';
-
         // トークンがない場合は不正扱い
         if ($token === '') {
             die("不正な処理ですよ。");
@@ -34,7 +33,6 @@ class Check_Various{
         // セッションに保存しておいたトークンの削除
         unset($_SESSION['token']);
 
-        // ↓ここにフォームで行う処理を書く
     }
 }
 ?>

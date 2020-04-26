@@ -3,7 +3,6 @@
 require_once "/home/xs835288/mhs-pgmash.com/public_html/php練習/function/doublecheck.php";
 $Check = new Check_Various();
 $Check -> doublecheckresult();
-var_dump($Check);
 #ログインチェック
 require_once "/home/xs835288/mhs-pgmash.com/public_html/php練習/db/Logindb.php";
 $obj = new CheckLogin();

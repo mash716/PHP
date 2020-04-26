@@ -1,23 +1,12 @@
-<?php 
+<?
+require_once "/home/xs835288/mhs-pgmash.com/public_html/php練習/db/Connectdb.php";
 class  RegisterDb{
-    //DB接続
-    public function connect() {
 
-        define('db','mysql:dbname=xs835288_mhs; host=mysql10019.xserver.jp');
-        define('user','xs835288_mhs');
-        define('password','Wc3cLumJh2q8');
-    
-        try{
-            $db = new PDO(db ,user , password);
-            #print('接続成功しました');
-        }catch(PDOException $e){
-            exit('失敗しました:{$e->getMessage()}');
-        }
-        return $db;
-    }
     //任意の情報のチェック
     public function checkRegist(){
-        $db = $this->connect();
+            #db接続
+            $obj = new ConnectDb();
+            $db = $obj->connect();
     
         // SQL作成
         $sql = 'SELECT * FROM userform WHERE address = :address';
@@ -37,8 +26,9 @@ class  RegisterDb{
     public function register(){
 
         try{
-            //データベースに接続してPDOオブジェクトを生成
-            $db = $this->connect();
+            #db接続
+            $obj = new ConnectDb();
+            $db  = $obj->connect();
             //sql文
             $sql = 'insert into userform(name,kana,age,address,juusho,birthday,tel,password,password2)
             values(:name,:kana,:age,:address,:juusho,:birthday,:tel,:password,:password2)';

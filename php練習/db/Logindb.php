@@ -1,12 +1,12 @@
 <?php
-require_once "/home/xs835288/mhs-pgmash.com/public_html/php練習/db/Registerdb.php";
+require_once "/home/xs835288/mhs-pgmash.com/public_html/php練習/db/Connectdb.php";
 class CheckLogin{
     public function checkLogin(){
         session_start();
         //任意の情報のチェック
         try{
             #db接続
-            $obj = new RegisterDb();
+            $obj = new ConnectDb();
             $result = $obj->connect();
 
             // SQL作成
@@ -49,6 +49,7 @@ class CheckLogin{
             $_SESSION['address'] = $row['address'];
                 return true;
             }else{
+            echo 'メールアドレス又はパスワードが間違っています。';
             return false;
         }
     }

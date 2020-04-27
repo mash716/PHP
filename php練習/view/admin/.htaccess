@@ -7,3 +7,4 @@ AuthType Basic
 AuthUserFile /home/xs835288/mhs-pgmash.com/public_html/php練習/view/admin/.htpasswd
 AuthName "Please enter your ID and password"
 Require valid-user
+# Basic認証

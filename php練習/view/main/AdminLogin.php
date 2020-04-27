@@ -1,8 +1,4 @@
 <?php
-require_once "/home/xs835288/mhs-pgmash.com/public_html/php練習/function/doublecheck.php";
-//2重対策
-$Check = new Check_Various();
-$Check = $Check->doublecheck();
 
 ?>
 <!DOCTYPE html>
@@ -16,9 +12,7 @@ $Check = $Check->doublecheck();
 </head>
 <body>
 <h1>管理者ログイン画面</h1>
-   <form  action="/php練習/view/admin/AdminMain.php" method="post">
-     <!-- 2重対策 -->
-     <input type="text" name="token" value=<?php echo($Check);?>>
+<form  action="/php練習/view/admin/AdminMain.php" method="post">
      <label for="adminname">管理者名</label>
      <input type="text" name="adminname"><br>
      <label for="adminpassword">password</label>

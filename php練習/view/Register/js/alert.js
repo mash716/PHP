@@ -21,6 +21,7 @@ function clickBtn(){
 	var kanam = kana.match(/^[\u30a0-\u30ff]+$/);
 
 	//数値チェック
+	//小数点チェックができない…
 	if (namecount > 30 ){
 		alert("名前を30文字以内で書いて下さい");
 		return false;
@@ -45,7 +46,7 @@ function clickBtn(){
 			}else if(age == ""){
 				alert("年齢が空です");
 		    	return false;
-		    }else if(address == ""){
+			}else if(address == ""){
 		    	alert("メールアドレス空です");
 		    	return false;
 		    }else if(juusho == ""){

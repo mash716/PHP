@@ -1,9 +1,4 @@
 <?php
-//2重対策
-require_once "/home/xs835288/mhs-pgmash.com/public_html/php練習/function/doublecheck.php";
-$Check = new Check_Various();
-$Check -> doublecheckresult();
-
 
 require_once "/home/xs835288/mhs-pgmash.com/public_html/php練習/db/Admindb.php";
 $obj = new CheckAdminLogin();
@@ -17,6 +12,7 @@ if($resultAdminLogin == false){
 }else if($resultAdminPassword == false){
     exit();
 }
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -29,8 +25,10 @@ if($resultAdminLogin == false){
 </head>
 <body>
 <h1>管理者画面</h1>
-   <form  action="/php練習/view/main/UserMain.php" method="post">
-
+   <form  action="/php練習/view/admin/AdminUserList.php" method="post">
+    <input type="hidden" name="adminname" value=<?echo($_SESSION['adminname']);?>><br>
+    <input type="hidden" name="adminpassword" value=<?echo($_SESSION['adminpassword']);?>><br>
+    <button type="submit">ユーザ一覧</button><br>
     </form>
     <a href="/php練習//view/main/Main.php">戻る</a>
 </body>

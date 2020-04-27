@@ -1,5 +1,6 @@
 <? 
 class Check_Various{
+    /*クロスサイト対策*/
     public function doublecheck(){
         // セッションを開始する
         //2重送信対策
@@ -19,6 +20,7 @@ class Check_Various{
         // セッションに入れておいたトークンを取得
         $session_token = isset($_SESSION['token']) ? $_SESSION['token'] : '';
         // POSTの値からトークンを取得
+        var_dump($session_token);
         $token = isset($_POST['token']) ? $_POST['token'] : '';
         // トークンがない場合は不正扱い
         if ($token === '') {

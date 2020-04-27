@@ -33,10 +33,14 @@ class CheckLogin{
 
         $row = $this->checkLogin();
 
+        $row['name'];
+        $row['userid'];
+        $row['tel'];
+
         //emailがDB内に存在しているか確認
         if (!isset($row['address'])) {
             echo 'メールアドレス又はパスワードが間違っています。';
-            return false;
+            return exit;
         }
         return true;
     }
@@ -47,10 +51,14 @@ class CheckLogin{
         if(password_verify($_POST['password'], $row['password'])) {
             session_regenerate_id(true); //session_idを新しく生成し、置き換える
             $_SESSION['address'] = $row['address'];
-                return true;
+            $_SESSION['name'] = $row['name'];
+            $_SESSION['userid'] = $row['userid'];
+            $_SESSION['tel'] = $row['tel'];
+
+            return true;
             }else{
             echo 'メールアドレス又はパスワードが間違っています。';
-            return false;
+            return exit;
         }
     }
 }

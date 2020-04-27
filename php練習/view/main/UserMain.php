@@ -3,6 +3,10 @@
 require_once "/home/xs835288/mhs-pgmash.com/public_html/php練習/function/doublecheck.php";
 $Check = new Check_Various();
 $Check -> doublecheckresult();
+
+//html対策
+require_once "/home/xs835288/mhs-pgmash.com/public_html/php練習/function/strcheck.php";
+
 #ログインチェック
 require_once "/home/xs835288/mhs-pgmash.com/public_html/php練習/db/Logindb.php";
 $obj = new CheckLogin();
@@ -28,7 +32,7 @@ if($resultLogin == false){
 </head>
 <body>
 <h1>ユーザ画面</h1>
-<h2>ようこそ、ログインしてください。</h2>
+<h2>ようこそ、<?php echo(h($_SESSION['name'])); ?>さん</h2>
    <form  action="/php練習/view/main/UserMain.php" method="post">
 
     </form>

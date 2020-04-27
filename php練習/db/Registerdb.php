@@ -1,5 +1,6 @@
 <?
 require_once "/home/xs835288/mhs-pgmash.com/public_html/php練習/db/Connectdb.php";
+//同じメールアドレス登録されていた場合エラーがでる
 class  RegisterDb{
 
     //任意の情報のチェック
@@ -23,6 +24,7 @@ class  RegisterDb{
         $result = $statement->fetchAll();
         return $result;
     }
+    //新規登録処理
     public function register(){
 
         try{

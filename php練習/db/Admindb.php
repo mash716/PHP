@@ -28,7 +28,8 @@ class CheckAdminLogin{
         }
 
         return $row;
-    }   
+    }  
+
     public function checkAdminaddress(){
 
         $row = $this->checkAdminLogin();
@@ -47,11 +48,8 @@ class CheckAdminLogin{
         $row = $this->checkAdminLogin();
         session_regenerate_id(true); //session_idを新しく生成し、置き換える
         $_SESSION['adminpassword'] = $row['adminpassword'];
+        $_SESSION['adminname'] = $row['adminname'];
         return true;
-        echo '管理者名かパスワードが間違っています。';
-        return false;
-
-
         #パスワードがハッシュ値とマッチしてるか
         // if(password_verify($_POST['password'], $row['password'])) {
         //     session_regenerate_id(true); //session_idを新しく生成し、置き換える

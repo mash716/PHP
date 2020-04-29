@@ -3,9 +3,9 @@ Class ConnectDb{
     //DB接続
     public function connect() {
 
-        define('db','mysql:dbname=xs835288_mhs; host=mysql10019.xserver.jp');
-        define('user','xs835288_mhs');
-        define('password','Wc3cLumJh2q8');
+        define('db','mysql:dbname=(データベース名); host=(ドメイン名かIP)');
+        define('user','(ユーザー名)');
+        define('password','(パスワード)');
     
         try{
             $db = new PDO(db ,user , password);
